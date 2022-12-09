@@ -494,6 +494,6 @@ div.icon {
     transform: translatey(101%);
     transition: transform 250ms ease;
 }
-.thumb:hover .filter-overlay {
+.filter-item:hover .filter-overlay {
     transform: translatey(0);
 }
