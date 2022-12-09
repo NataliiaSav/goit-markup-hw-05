@@ -10,7 +10,7 @@
 /* вторічний колір фону #2F303A */
 /* колір бордеру у хедері #ECECEC */
 /* колір соцмереж #AFB1B8 */
-/*  */
+/* колір оверлей у портфоліо  rgba(33, 150, 243, 0.9)*/
 
 :root {
     --title-color: #212121;
@@ -24,6 +24,7 @@
     --border-color: #ECECEC;
     --border-cards-color: #EEEEEE;
     --icon-color: #AFB1B8;
+    --overlay-filter: rgba(33, 150, 243, 0.9)
 
 }
 body {
@@ -45,7 +46,10 @@ h6,
 p {
     margin: 0;
 }
-
+img {
+    display: block;
+    height: auto;
+}
 .container {
     margin-left: auto;
     margin-right: auto;
@@ -80,13 +84,13 @@ p {
     margin-left: 50px;
 }
 .site-nav .link {
-    padding-top: 10px;
-    padding-bottom: 10px;
-    color: var(--title-color);
+    padding-top: 32px;
+    padding-bottom: 32px;
     font-weight: 500;
     font-size: 14px;
     line-height: 1.14;
     letter-spacing: 0.02em;
+    color: var(--title-color);
     text-decoration: none;
 }
 .site-nav .link.current {
@@ -99,7 +103,7 @@ p {
     content: "";
     display: block;
     position: absolute;
-    margin-top: 28px;
+    top: 46px;
     width: 100%;
     height: 4px;
     border-radius: 2px;
@@ -236,8 +240,30 @@ div.icon {
     gap: 30px;
 }
 .item-images {
+    position: relative;
     width: 370px;
    }
+.caption {
+    display: flex;
+    padding: 0;
+    margin: 0;
+    justify-content: center;
+    align-items: center;
+   
+    position: absolute;
+    width: 100%;
+    height: 70px;
+    bottom: 0;
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), rgba(47, 48, 58, 0.8);
+
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 1.14px;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    color: var(--primary-white-color); 
+}
+/* team */
 
 .section-team {
     margin-top: 32px;
@@ -245,7 +271,6 @@ div.icon {
     font-size: 16px;
     line-height: 1.19;
     letter-spacing: 0.03em;
-
     }
 .list.team {
     display: flex;
@@ -253,6 +278,7 @@ div.icon {
     text-align: center;
     gap: 30px;
 }
+
 .team {
     width: 270px;
     background-color: var(--primary-white-color);
@@ -430,6 +456,7 @@ div.icon {
 }
 .filter-item:hover,
 .filter-item:focus {
+    cursor: pointer;
     box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06), 1px 4px 6px rgba(0, 0, 0, 0.16);
 }
 .filter.title {
@@ -445,4 +472,28 @@ div.icon {
 }
 .filter-content {
     padding: 20px 24px;
+}
+.thumb {
+    position: relative;
+    overflow: hidden;
+}
+.filter-overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: var(--overlay-filter);
+    
+    padding: 63px 24px;
+    font-size: 18px;
+    line-height: 1.3;
+    letter-spacing: 0.03;
+    color: var(--primary-white-color);
+
+    transform: translatey(101%);
+    transition: transform 250ms ease;
+}
+.thumb:hover .filter-overlay {
+    transform: translatey(0);
 }
