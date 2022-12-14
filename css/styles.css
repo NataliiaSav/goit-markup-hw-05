@@ -34,8 +34,6 @@ body {
 }
 .list {
     list-style: none;
-    margin: 0;
-    padding: 0;
 }
 h1,
 h2,
@@ -43,8 +41,10 @@ h3,
 h4,
 h5,
 h6,
-p {
+p,
+ul {
     margin: 0;
+    padding: 0;
 }
 img {
     display: block;
@@ -53,13 +53,15 @@ img {
 .container {
     margin-left: auto;
     margin-right: auto;
+    align-items: center;
     width: 1200px;
     padding-left: 15px;
     padding-right: 15px;
 }
-.page-header {
+.container.header {
     display: flex;
-    align-items: center;
+}
+.page-header {
     border-bottom: 1px solid var(--border-color);
 }
 .logo {
@@ -95,7 +97,6 @@ img {
     text-decoration: none;
 
     transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
-
 }
 .site-nav .link.current {
     color: var(--accent-color);
@@ -120,7 +121,7 @@ img {
 .contacts-list {
     display: flex;
     margin-left: auto;
-       }
+}
  .contacts-item .contacts:last-child {
     margin-left: 40px;
 }
@@ -132,7 +133,6 @@ img {
     text-decoration: none;
     color: var(--text-color); 
     transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
-    
 }
 .cotacts-icon {
     fill: currentColor;
@@ -153,7 +153,6 @@ img {
     margin-left: auto;
     margin-right: auto;
     max-width: 1600px;
-    height: 600px;
     background-image: linear-gradient(
       to right,
       rgba(47, 48, 58, 0.4),
@@ -223,6 +222,7 @@ div.icon {
     padding-top: 0;
 }
 .section-title {
+    display: block;
     font-size: 36px;
     line-height: 1.17;
     text-align: center;
@@ -338,8 +338,6 @@ div.icon {
 /* клієнти */
 .clients-set {
     display: flex;
-    margin: 0;
-    padding: 0;
     gap: 30px;
 }
 .clients-item {
@@ -366,8 +364,9 @@ div.icon {
 .footer {
     background-color: var(--secondary-bcg-color);
     } 
-.footer.container {
+.container.footer {
     display: flex;
+    align-items: flex-start;
     
     }
 .footer-address {
@@ -401,7 +400,6 @@ div.icon {
 .footer-social {
     padding-top: 72px;
     padding-left: 70px;
-  
 }
 .social {
     display: flex;
@@ -411,11 +409,9 @@ div.icon {
     gap: 10px;
 }
 .footer-text {
-    display: flex;
     font-weight: 700;
     font-size: 14px;
     line-height: 1.14;
-    letter-spacing: 0.03em;
     text-transform: uppercase;
     color: var(--primary-white-color);
 }
@@ -431,9 +427,9 @@ div.icon {
 }
 /* portfolio */
 .filter.list {
-    margin-bottom: 34px;
     display: flex;
     justify-content: center;
+    margin-bottom: 34px;
     gap: 8px;
 }
 .button.filter {
